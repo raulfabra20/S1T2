@@ -82,7 +82,7 @@ public class Input {
                 System.out.println(message);
                 word = sc.next();
                 sc.nextLine();
-                if (word.length() == 1 && Character.isDigit(word.charAt(0))){
+                if (word.length() == 1 && !Character.isDigit(word.charAt(0))){
                     character = word.charAt(0);
 
                 } else {
@@ -98,23 +98,26 @@ public class Input {
     }
    //asegurarme que solo lee strings (recorrer el string)
     public static String readString(String message) {
-        boolean isCorrect = true;
-        boolean isName = true;
+        boolean isCorrect = false;
+
         String name = " ";
         int i = 0;
         do {
             try {
                 System.out.println(message);
                 name = sc.nextLine();
-                while(i<name.length() && !isName){
+                boolean isNumber = false;
+                while(i<name.length() && !isNumber){
                     if(Character.isDigit(name.charAt(i))){
-                        isName = false;
+                        isNumber = true;
                     }
                     i++;
+
                 }
-                if(!isName){
+                if(isNumber){
                     throw new Exception("Format error, please try again.");
                 }
+                isCorrect = true;
 
             } catch (Exception eString) {
                 System.out.println(eString.getMessage());
@@ -147,11 +150,5 @@ public class Input {
         } while(!isCorrect);
         return isItYes;
     }
-
-
-
-
-
-
 
 }
