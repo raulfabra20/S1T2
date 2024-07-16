@@ -4,7 +4,7 @@ import static n2.Application.testApplication;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         testApplication();
 
     }

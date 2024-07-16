@@ -4,7 +4,7 @@ import static n2.models.Input.*;
 
 public class Application {
 
-    public static void testApplication() throws Exception {
+    public static void testApplication() {
         testByteMethod();
         testIntMethod();
         testFloatMethod();
@@ -34,17 +34,17 @@ public class Application {
         double averageMark = readDouble(message);
         System.out.println("Your average mark is: "+averageMark);
     }
-    public static void testCharMethod() throws Exception {
+    public static void testCharMethod() {
         String message = "Enter a character: ";
         char character = readChar(message);
         System.out.println("Your character is: "+character);
     }
-    public static void testStringMethod() throws Exception {
+    public static void testStringMethod()  {
         String message = "Enter your name: ";
         String name = readString(message);
         System.out.println("Your name is: "+name);
     }
-    public static void testBooleanMethod() throws Exception {
+    public static void testBooleanMethod()  {
         String message = "Do you give consent for your personal data to be processed? " +
                 "(Write 'Y' for 'Yes', 'N' for 'No'): ";
         Boolean answer = readYesNo(message);
